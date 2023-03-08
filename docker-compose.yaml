@@ -31,8 +31,8 @@ services:
        - document_log:/var/log/onlyoffice
        
   onlyoffice-rabbitmq:
-    container_name: onlyoffice-rabbitmq:3.11
-    image: rabbitmq
+    container_name: onlyoffice-rabbitmq
+    image: rabbitmq:3.11
     restart: unless-stopped
     expose:
       - '5672'
