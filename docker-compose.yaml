@@ -14,7 +14,7 @@ services:
       - DB_PORT=5432
       - DB_NAME=onlyoffice
       - DB_USER=onlyoffice
-      - AMQP_URI=amqp://guest:guest@onlyoffice-rabbitmq
+      #- AMQP_URI=amqp://guest:guest@onlyoffice-rabbitmq
       # Uncomment strings below to enable the JSON Web Token validation.
       - JWT_ENABLED=false
       #- JWT_SECRET=secret
@@ -29,6 +29,7 @@ services:
     volumes:
        - document_data:/var/www/onlyoffice/Data
        - document_log:/var/log/onlyoffice
+       - document_fonts:/usr/share/fonts/truetype/custom      
        
   onlyoffice-rabbitmq:
     container_name: onlyoffice-rabbitmq
@@ -54,5 +55,5 @@ volumes:
   postgresql_data:
   document_data:
   document_log:  
-
+  document_fonts: 
 
