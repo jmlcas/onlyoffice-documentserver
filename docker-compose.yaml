@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   onlyoffice-ds:
-    image: onlyoffice/documentserver:7.3
+    image: onlyoffice/documentserver:latest
     container_name: onlyoffice-ds
     depends_on:
       - onlyoffice-postgresql
@@ -33,14 +33,14 @@ services:
        
   onlyoffice-rabbitmq:
     container_name: onlyoffice-rabbitmq
-    image: rabbitmq:3.11
+    image: rabbitmq:latest
     restart: unless-stopped
     expose:
       - '5672'
 
   onlyoffice-postgresql:
     container_name: onlyoffice-postgresql
-    image: postgres:15.2
+    image: postgres:15.3
     environment:
       - POSTGRES_DB=onlyoffice
       - POSTGRES_USER=onlyoffice
